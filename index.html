@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0F14">
+<meta name="author" content="Артур Юнусов">
+<title>Тест на финансовую грамотность — Артур Юнусов</title>
+<meta name="description" content="20 житейских вопросов про деньги: скидки, кэшбэк, рассрочки, мошенники, курс доллара. Проверь себя за 5 минут.">
+<meta property="og:title" content="Тест на финансовую грамотность: 20 житейских вопросов">
+<meta property="og:description" content="Скидки, кэшбэк, рассрочки, мошенники, курс доллара. Сколько наберёшь ты?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0F14;--p1:#111922;--p2:#0E151D;--line:#1F2A36;--line2:#2A3847;--tx:#E8EEF3;--mu:#8A99A8;--up:#00D68F;--dn:#FF5C6C;--gold:#F5C451}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--tx);font-family:Onest,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;min-height:100dvh;display:flex;justify-content:center}
+#app{width:100%;max-width:560px;padding:20px 16px calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.chip{display:inline-block;font:700 12px "JetBrains Mono",monospace;letter-spacing:2px;color:var(--up);background:#00D68F18;border:1px solid #00D68F55;padding:6px 10px;border-radius:10px}
+h1{font-size:34px;line-height:1.08;font-weight:800;letter-spacing:-.5px;margin:18px 0 12px}
+h1 em{font-style:normal;color:var(--up)}
+.lead{color:#B8C4CF;font-size:17px;line-height:1.45}
+.card{background:linear-gradient(var(--p1),var(--p2));border:1px solid var(--line2);border-radius:18px;padding:16px}
+.list{display:grid;gap:10px;margin:22px 0}
+.li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.4;color:#C9D3DC}
+.li b{color:var(--tx)}
+.ic{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#00D68F14;border:1px solid #00D68F44;font-size:17px}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px 18px;font:800 17px Onest,system-ui,sans-serif;cursor:pointer;text-align:center;text-decoration:none;transition:transform .08s ease}
+.btn:active{transform:scale(.98)}
+.btn-main{background:var(--up);color:#04140D}
+.btn-gold{background:var(--gold);color:#1A1405}
+.btn-ghost{background:transparent;color:var(--tx);border:1px solid var(--line2)}
+.stack{display:grid;gap:10px;margin-top:auto;padding-top:20px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.score{font:700 14px "JetBrains Mono",monospace;color:var(--mu)}
+.score b{color:var(--up)}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin:12px 0 18px}
+.bar i{display:block;height:100%;background:var(--up);border-radius:6px;transition:width .3s ease}
+.lvl{font:700 11px "JetBrains Mono",monospace;letter-spacing:1.5px;color:var(--mu);margin-bottom:8px}
+.q{font-size:21px;line-height:1.3;font-weight:800;margin-bottom:16px}
+.opts{display:grid;gap:10px}
+.opt{width:100%;text-align:left;background:var(--p1);color:var(--tx);border:1px solid var(--line2);border-radius:14px;padding:14px 14px;font:600 16px Onest,system-ui,sans-serif;line-height:1.35;cursor:pointer;display:flex;gap:12px;align-items:flex-start}
+.opt .k{flex:0 0 26px;height:26px;border-radius:8px;display:grid;place-items:center;background:#ffffff0d;font:700 13px "JetBrains Mono",monospace;color:var(--mu)}
+.opt.ok{border-color:var(--up);background:#00D68F16}
+.opt.ok .k{background:var(--up);color:#04140D}
+.opt.bad{border-color:var(--dn);background:#FF5C6C14}
+.opt.bad .k{background:var(--dn);color:#1A0507}
+.opt[disabled]{cursor:default}
+.ex{margin-top:14px;border-radius:14px;padding:14px;font-size:15.5px;line-height:1.45;color:#D4DDE5;border:1px solid var(--line2);background:var(--p2)}
+.ex .h{font-weight:800;margin-bottom:6px}
+.ex.okx .h{color:var(--up)}
+.ex.badx .h{color:var(--dn)}
+.big{font:800 64px Onest,system-ui,sans-serif;letter-spacing:-2px;line-height:1;margin-top:18px}
+.big span{color:var(--mu);font-size:32px}
+.rank{display:inline-block;margin-top:12px;font-weight:800;font-size:20px;color:var(--gold)}
+.small{font-size:12.5px;color:#5F6D7B;line-height:1.4;margin-top:16px}
+.gift{margin-top:18px;border:1px solid #F5C45166;background:#F5C45112;border-radius:16px;padding:14px;font-size:15.5px;line-height:1.45;color:#EADFC2}
+.gift b{color:var(--gold)}
+.fade{animation:f .25s ease}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<noscript><p style="padding:24px">Для теста нужен JavaScript.</p></noscript>
+<script>
+const BOT='https://t.me/YunusovArtur_bot';
+const SHARE_START='fintest_share';
+const DONE_START='fintest_done';
+
+// 20 вопросов: от простых к сложным. a — индекс правильного ответа.
+const Q=[
+{q:'Кэшбэк 5% на покупку за 2 000 ₽. Сколько вернётся?',o:['50 ₽','100 ₽','200 ₽'],a:1,e:'5% от 2 000 ₽ — это 100 ₽. Кэшбэк приятен, но это всего лишь маленькая часть того, что ты уже потратил.'},
+{q:'Почему в магазинах ставят цену 999 ₽, а не 1 000 ₽?',o:['Так требует закон','Мозг видит «9» и кажется, что это «девятьсот с чем-то»','Чтобы кассиру было удобнее давать сдачу'],a:1,e:'Это маркетинг. Мы читаем первую цифру и воспринимаем 999 как «примерно 900», хотя разница всего 1 рубль.'},
+{q:'Скидка 50%, а на кассе ещё −20%. Какая итоговая скидка?',o:['70%','60%','50%'],a:1,e:'Скидки не складываются. 1 000 ₽ − 50% = 500 ₽, потом −20% от 500 = 400 ₽. Итого скидка 60%, а не 70%.'},
+{q:'Шоколадка 100 г за 120 ₽ или «новая упаковка» 85 г за 105 ₽. Что выгоднее?',o:['100 г за 120 ₽','85 г за 105 ₽','Одинаково'],a:0,e:'Считай цену за грамм: 1,20 ₽ против 1,24 ₽. «Новая упаковка» часто значит «меньше товара за почти те же деньги». Смотри цену за кг на ценнике.'},
+{q:'Акция «3 по цене 2». Сколько ты экономишь на каждой штуке?',o:['Треть цены','Половину цены','Ничего'],a:0,e:'Платишь за 2, получаешь 3 — каждая штука дешевле на треть. Но выгодно, только если тебе правда нужны все три.'},
+{q:'Пишут: «Вы выиграли iPhone! Оплатите доставку 490 ₽». Что это?',o:['Удача, надо оплатить','Мошенники','Обычная акция магазина'],a:1,e:'Настоящий приз не требует платить за доставку незнакомцам. Заплатишь 490 ₽ — потом попросят ещё «налог» или «страховку».'},
+{q:'Звонят «из службы безопасности банка» и просят код из СМС. Что делать?',o:['Продиктовать код, раз из банка','Положить трубку и самому позвонить в банк по номеру на карте','Сказать только половину кода'],a:1,e:'Банк никогда не спрашивает коды из СМС. Код — это ключ от твоих денег. Клади трубку и звони сам по номеру на обороте карты.'},
+{q:'Купил вещь, которая была не нужна, но с кэшбэком 10%. Что произошло?',o:['Заработал 10%','Потратил 90% впустую','Вышел в ноль'],a:1,e:'Кэшбэк выгоден только на то, что ты и так собирался купить. Иначе ты не заработал 10%, а потратил 90%.'},
+{q:'Кэшбэк баллами «1 балл = 1 ₽». Это то же самое, что рубли на карту?',o:['Да, одно и то же','Нет: баллы тратятся только у партнёров и могут сгореть','Баллы даже лучше рублей'],a:1,e:'Рубли можно потратить где угодно. Баллы — только там, где разрешили, и у них часто есть срок жизни. Читай условия.'},
+{q:'5 подписок по 299 ₽ в месяц (кино, музыка, облако…). Сколько это за год?',o:['Около 3 600 ₽','Около 6 000 ₽','Около 18 000 ₽'],a:2,e:'299 × 5 × 12 = 17 940 ₽. Маленькие суммы каждый месяц незаметно складываются в большие. Проверь, чем реально пользуешься.'},
+{q:'Кофе навынос за 250 ₽ каждый рабочий день (~22 дня в месяц). Сколько в год?',o:['Около 6 000 ₽','Около 22 000 ₽','Около 66 000 ₽'],a:2,e:'250 × 22 × 12 = 66 000 ₽. Это не повод отказываться от кофе, но полезно знать, во что обходятся привычки.'},
+{q:'Телефон в рассрочку «0%» прямо в магазине. Что часто прячется внутри?',o:['Ничего, это подарок','Цена в рассрочку выше, чем при оплате сразу, или навязанная страховка','Банк доплачивает за тебя'],a:1,e:'Банк не работает бесплатно. «0%» часто оплачен скрытой наценкой на товар, страховкой или платными услугами. Сравни цену «сразу» и «в рассрочку».'},
+{q:'Оплатил «частями» (сервисы оплаты долями). Пропустил платёж. Что будет?',o:['Ничего, заплачу потом','Штраф или комиссия, а просрочка может попасть в кредитную историю','Покупку отменят и вернут деньги'],a:1,e:'Это тоже долг. За просрочку берут плату, а данные могут уйти в бюро кредитных историй — потом кредит дадут дороже или откажут.'},
+{q:'На кредитке льготный период 100 дней. Снял с неё наличные. Беспроцентный период действует?',o:['Да, на всё','Часто нет: за наличные и переводы берут комиссию и проценты сразу','Да, если снять в банкомате своего банка'],a:1,e:'Льготный период обычно работает только на покупки. Снятие наличных и переводы с кредитки — одна из самых дорогих операций.'},
+{q:'По кредитке платишь только минимальный платёж. Что с долгом?',o:['Быстро гасится','Гасится очень долго: большая часть платежа уходит на проценты','Банк прощает остаток'],a:1,e:'Минимальный платёж — ловушка: долг может висеть годами, а переплата вырастет в разы. Гаси столько, сколько можешь, а лучше — всё в льготный период.'},
+{q:'Где обычно самый невыгодный курс обмена валюты?',o:['В банке в центре города','В обменнике в аэропорту','Одинаково везде'],a:1,e:'В аэропорту и в туристических местах платят за срочность: курс там обычно заметно хуже. Меняй заранее.'},
+{q:'Официальный курс доллара ЦБ ~80,5 ₽. Можно купить доллары в банке по этому курсу?',o:['Да, по закону','Нет: банк продаёт дороже курса ЦБ, а покупает дешевле','Да, если сказать, что по курсу ЦБ'],a:1,e:'Курс ЦБ — ориентир для расчётов. Банк зарабатывает на разнице: продаёт валюту дороже, покупает дешевле. Сравнивай курсы продажи в разных банках.'},
+{q:'Ключевая ставка ЦБ — 14%. Можно ли взять обычный кредит под 14%?',o:['Да, ставка же 14%','Обычно нет: банк добавляет свою маржу и плату за риск','Только пенсионерам'],a:1,e:'Ключевая ставка — цена денег для банков. Людям кредиты выдают дороже. Например, рыночная ипотека летом 2026 была в среднем около 18% (данные ЦБ).'},
+{q:'Цены за год выросли на 7%. 100 000 ₽ лежали дома весь год. Сколько они «стоят» теперь в покупках сегодняшнего года?',o:['100 000 ₽','Примерно 93 500 ₽','Примерно 107 000 ₽'],a:1,e:'Купюр столько же, но купить на них можно меньше: 100 000 / 1,07 ≈ 93 500 ₽. Инфляция тихо съедает деньги, которые просто лежат.'},
+{q:'Ипотека 5 млн ₽ на 20 лет под 18% годовых. Сколько примерно переплатишь банку?',o:['Около 1 млн ₽','Около 5 млн ₽','Около 13,5 млн ₽'],a:2,e:'Платёж ≈ 77 000 ₽ в месяц × 240 месяцев ≈ 18,5 млн ₽. Переплата ≈ 13,5 млн — почти в 3 раза больше самого кредита. Срок и ставка решают всё.'}
+];
+
+const RANKS=[
+[18,'Финансовый гуру 🏆','Ты разбираешься в деньгах лучше большинства. Проверь друзей — пусть попробуют догнать.'],
+[14,'Финансист 💼','Крепкий уровень. Пару ловушек ты знаешь, остальное подтянуть — дело одного вечера.'],
+[9,'Уверенный пользователь 👍','Основы есть, но банки и магазины ещё могут тебя перехитрить. Перечитай объяснения к ошибкам.'],
+[0,'Начинающий 🌱','Ничего страшного — эти вопросы мало кто знает. Теперь ты знаешь больше, чем вчера.']
+];
+
+const app=document.getElementById('app');
+let i=0,score=0;
+const level=n=>n<6?'ЛЕГКО':n<13?'ПОВСЕДНЕВНОЕ':n<16?'ПОСЛОЖНЕЕ':'ДЛЯ ПРОФИ';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function intro(){
+ app.innerHTML=`<div class="fade" style="display:flex;flex-direction:column;flex:1">
+ <div><span class="chip">ПОДАРОК В ЧЕСТЬ ДНЯ РОЖДЕНИЯ</span></div>
+ <h1>Тест на <em>финансовую грамотность</em></h1>
+ <p class="lead">20 житейских вопросов про деньги, с которыми сталкиваешься каждый день. Разберётся и школьник, и бабушка — а подвохи найдутся для всех.</p>
+ <div class="list">
+  <div class="li"><div class="ic">🛒</div><div><b>Скидки и акции</b> — как не попасться на «выгодные» предложения</div></div>
+  <div class="li"><div class="ic">💳</div><div><b>Кэшбэк, рассрочки, кредитки</b> — где прячется переплата</div></div>
+  <div class="li"><div class="ic">🛡️</div><div><b>Мошенники</b> — как сохранить деньги на карте</div></div>
+  <div class="li"><div class="ic">💵</div><div><b>Доллар, ставка ЦБ, ипотека</b> — последние вопросы для самых умных</div></div>
+ </div>
+ <p class="lead" style="font-size:15px;color:var(--mu)">⏱ Около 5 минут · после каждого ответа короткое объяснение</p>
+ <div class="stack"><button class="btn btn-main" onclick="start()">Начать тест</button></div>
+ <p class="small">Автор — Артур Юнусов, инвестирую с 2017 года. Тест носит образовательный характер и не является финансовой рекомендацией.</p>
+ </div>`;
+}
+function start(){i=0;score=0;show();}
+function show(){
+ const it=Q[i];
+ app.innerHTML=`<div class="fade" style="display:flex;flex-direction:column;flex:1">
+ <div class="top"><span class="score mono">Вопрос ${i+1}/${Q.length}</span><span class="score mono">Баллы: <b>${score}</b></span></div>
+ <div class="bar"><i style="width:${(i)/Q.length*100}%"></i></div>
+ <div class="lvl">${level(i)}</div>
+ <div class="q">${esc(it.q)}</div>
+ <div class="opts">${it.o.map((t,k)=>`<button class="opt" data-k="${k}" onclick="pick(${k})"><span class="k">${'АБВ'[k]}</span><span>${esc(t)}</span></button>`).join('')}</div>
+ <div id="ex"></div>
+ <div class="stack" id="nx"></div>
+ </div>`;
+ window.scrollTo(0,0);
+}
+function pick(k){
+ const it=Q[i],ok=k===it.a;
+ if(ok)score++;
+ document.querySelectorAll('.opt').forEach(b=>{const n=+b.dataset.k;b.disabled=true;if(n===it.a)b.classList.add('ok');else if(n===k)b.classList.add('bad');});
+ document.getElementById('ex').innerHTML=`<div class="ex ${ok?'okx':'badx'} fade"><div class="h">${ok?'✅ Верно!':'❌ Не совсем'}</div>${esc(it.e)}</div>`;
+ document.querySelector('.score b').textContent=score;
+ document.getElementById('nx').innerHTML=`<button class="btn btn-main" onclick="next()">${i<Q.length-1?'Дальше →':'Узнать результат'}</button>`;
+ document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function next(){i++;if(i<Q.length)show();else finish();}
+function finish(){
+ const r=RANKS.find(x=>score>=x[0]);
+ const shareText=`Я набрал ${score} из 20 в тесте на финансовую грамотность 💸 Проверь себя — сможешь больше?`;
+ const shareUrl=`https://t.me/share/url?url=${encodeURIComponent(BOT+'?start='+SHARE_START)}&text=${encodeURIComponent(shareText)}`;
+ app.innerHTML=`<div class="fade" style="display:flex;flex-direction:column;flex:1">
+ <div><span class="chip">РЕЗУЛЬТАТ</span></div>
+ <div class="big">${score}<span>/20</span></div>
+ <div class="rank">${r[1]}</div>
+ <p class="lead" style="margin-top:10px">${r[2]}</p>
+ <div class="gift">🎁 <b>Розыгрыш мерча в честь моего дня рождения</b><br>Разыгрываю 2 футболки и худи. Вернись в бота и нажми кнопку ниже — бот запишет тебя в участники. Итоги в воскресенье.</div>
+ <div class="stack">
+  <a class="btn btn-gold" href="${BOT}?start=${DONE_START}">Участвовать в розыгрыше 🎁</a>
+  <a class="btn btn-main" href="${shareUrl}">Отправить тест другу</a>
+  <button class="btn btn-ghost" onclick="start()">Пройти ещё раз</button>
+ </div>
+ <p class="small">Тест носит образовательный характер и не является финансовой рекомендацией. Цифры актуальны на октябрь 2026 года.</p>
+ </div>`;
+ window.scrollTo(0,0);
+}
+intro();
+</script>
+</body>
+</html>
