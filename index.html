@@ -71,7 +71,8 @@ h1 em{font-style:normal;color:var(--up)}
 <script>
 const BOT='https://t.me/YunusovArtur_bot';
 const SHARE_START='fintest_share';
-const NEXT_START='game';
+const NEXT_START='nalog';
+const SKY_START='skyrocket_fintest';
 
 // 20 вопросов: от простых к сложным. a — индекс правильного ответа.
 const Q=[
@@ -158,9 +159,10 @@ function finish(){
  <div class="big">${score}<span>/20</span></div>
  <div class="rank">${r[1]}</div>
  <p class="lead" style="margin-top:10px">${r[2]}</p>
- <div class="gift">🎮 <b>Следующий уровень — игра «Инвест-старт»</b><br>Основы есть — теперь проверь их в деле. 20 лет инвестиций за 5 минут: у тебя 100 000 ₽, кризисы, обвалы и бумы. Получится обогнать ленивого инвестора?</div>
+ <div class="gift">🎮 <b>Следующий уровень (2 из 7) — игра «Налог на вклад»</b><br>Основы есть — теперь проверь их на своих деньгах. Посчитай, сколько налога придёт за проценты по вкладам, какая у вклада реальная доходность и как вернуть до 52 000 ₽ через ИИС. 3 минуты.</div>
  <div class="stack">
-  <a class="btn btn-gold" href="${BOT}?start=${NEXT_START}">Играть в «Инвест-старт» 🎮</a>
+  <a class="btn btn-gold" href="${BOT}?start=${NEXT_START}">Играть в «Налог на вклад» 🎮</a>
+  <a class="btn btn-ghost" href="${BOT}?start=${SKY_START}">Узнать про закрытый канал 🔒</a>
   <a class="btn btn-main" href="${shareUrl}">Отправить тест другу</a>
   <button class="btn btn-ghost" onclick="start()">Пройти ещё раз</button>
  </div>
