@@ -71,7 +71,7 @@ h1 em{font-style:normal;color:var(--up)}
 <script>
 const BOT='https://t.me/YunusovArtur_bot';
 const SHARE_START='fintest_share';
-const DONE_START='fintest_done';
+const NEXT_START='game';
 
 // 20 вопросов: от простых к сложным. a — индекс правильного ответа.
 const Q=[
@@ -111,7 +111,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 
 function intro(){
  app.innerHTML=`<div class="fade" style="display:flex;flex-direction:column;flex:1">
- <div><span class="chip">ПОДАРОК В ЧЕСТЬ ДНЯ РОЖДЕНИЯ</span></div>
+ <div><span class="chip">20 ВОПРОСОВ · 5 МИНУТ</span></div>
  <h1>Тест на <em>финансовую грамотность</em></h1>
  <p class="lead">20 житейских вопросов про деньги, с которыми сталкиваешься каждый день. Разберётся и школьник, и бабушка — а подвохи найдутся для всех.</p>
  <div class="list">
@@ -158,9 +158,9 @@ function finish(){
  <div class="big">${score}<span>/20</span></div>
  <div class="rank">${r[1]}</div>
  <p class="lead" style="margin-top:10px">${r[2]}</p>
- <div class="gift">🎁 <b>Розыгрыш мерча в честь моего дня рождения</b><br>Разыгрываю 2 футболки и худи. Вернись в бота и нажми кнопку ниже — бот запишет тебя в участники. Итоги в воскресенье.</div>
+ <div class="gift">🎮 <b>Следующий уровень — игра «Инвест-старт»</b><br>Основы есть — теперь проверь их в деле. 20 лет инвестиций за 5 минут: у тебя 100 000 ₽, кризисы, обвалы и бумы. Получится обогнать ленивого инвестора?</div>
  <div class="stack">
-  <a class="btn btn-gold" href="${BOT}?start=${DONE_START}">Участвовать в розыгрыше 🎁</a>
+  <a class="btn btn-gold" href="${BOT}?start=${NEXT_START}">Играть в «Инвест-старт» 🎮</a>
   <a class="btn btn-main" href="${shareUrl}">Отправить тест другу</a>
   <button class="btn btn-ghost" onclick="start()">Пройти ещё раз</button>
  </div>
